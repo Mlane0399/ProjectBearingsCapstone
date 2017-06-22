@@ -1,0 +1,50 @@
+﻿@model BearingsWebApp.Models.MeebaInfo
+
+@{
+    ViewBag.Title = "Delete";
+}
+<style>
+    body {
+        background-color:#f9f4e5;
+    }
+</style>
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Meeba Info</h4>
+    <hr />
+    <div class="col-md-4">
+        <h2> @Html.DisplayNameFor(model => model.itemName)</h2>
+        @Html.DisplayFor(model => model.itemName)
+        <br />
+        <br />
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-actions no-color">
+
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+
+        }
+        
+    </div>
+    
+    <div class="col-md-4">
+        <h2>@Html.DisplayNameFor(model => model.category)</h2>
+    @Html.DisplayFor(model => model.category)
+    </div>
+    
+    <div class="col-md-4">
+        <h2>@Html.DisplayNameFor(model => model.pull)</h2>
+      @Html.DisplayFor(model => model.pull)
+     </div>
+            
+
+    
+    
+</div>
